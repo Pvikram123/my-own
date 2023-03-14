@@ -1,25 +1,18 @@
 const express=require("express")
 const Mongoose=require("mongoose")
 Mongoose.set('strictQuery', false);
-const router=require("./routes/routes")
+const router=require("./routes/userRoute")
+const authrouter=require("./routes/authRoutes")
 const app=express()
 const jwt_auth=require('./auth/authvadalation')
-const register=require("./auth/authreg.js")
-const login = require("./auth/authlog")
-const userlogout= require("./auth/authlogout")
-const delete_user=require("./controllers/delete")
 const cookieParser = require("cookie-parser");
 app.use(cookieParser())
 
 
 app.use(express.json())
-app.post("/reg",register)
-app.post("/log",login)
-app.delete("/out",userlogout)
-router.delete('/del',jwt_auth,delete_user)
-
+app.use('/try',router)
 app.use('/',jwt_auth)
-app.use('/exe',router)
+app.use('/exe',authrouter)
 
 const uri =`mongodb+srv://vikram24:${process.env.password}@cluster0.pwfx8lq.mongodb.net/karthi`;
 Mongoose.connect(uri, {

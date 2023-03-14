@@ -17,7 +17,7 @@ const login = async (req, res) => {
         { user_id: user._id, useremail },
         process.env.TOKEN_KEY,
         {
-          expiresIn: "10m",
+          expiresIn: "1h",
         }
       );
       user.token = token;

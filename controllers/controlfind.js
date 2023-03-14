@@ -31,7 +31,7 @@ exports.getname=async(req,res)=>
     try
     { 
     
-      const data=await karthi.find({name:req.query.name})
+      const data=await karthi.find({name:req.body.name})
         res.status(200).json({"message":data})
     }   
     catch(err){
