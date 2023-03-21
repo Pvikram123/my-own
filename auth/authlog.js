@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 
 
 const login = async (req, res) => {
+if(req.body.useremail){
   try {
     const { useremail,userpassword } = req.body;
     if (!(useremail && userpassword)) {
@@ -35,4 +36,37 @@ const login = async (req, res) => {
     res.send("INVALID PASSWORD OR INFORMATION")
   }
 }
+else if (req.body.username)
+{
+  try {
+    const { username,userpassword } = req.body;
+    if (!(username && userpassword)) {
+      res.status(400).json({ Message: "All input required" });
+    }
+    const user = await User.findOne({ username: username });
+
+    if (user && (await bcrypt.compare(userpassword, user.userpassword))) {
+      const token = jwt.sign(
+        { user_id: user._id, username },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: "1h",
+        }
+      );
+      console.log("sasasaasada");
+      user.token = token;
+      res
+      .status(200)
+      .cookie("access_token", token)
+      .json({ message: "Log in"});
+    }
+    else{
+    res.status(400).send("Invalid credentials");
+    }
+
+  } catch (err) {
+    res.send("INVALID PASSWORD OR INFORMATION")
+  }
+}}
+
 module.exports = login

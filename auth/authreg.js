@@ -4,7 +4,8 @@ const bcrypt = require("bcryptjs");
 
 
 const register = async (req, res) => {
-  const { username, userpassword, useremail } = req.body;
+  const { username, userpassword, useremail,userphno,dateofbirth } = req.body;
+  console.log(userphno); 
  
   bcrypt.hash(userpassword, 10).then(
     async (hash) =>
@@ -12,6 +13,10 @@ const register = async (req, res) => {
         useremail,
         username,
         userpassword: hash,
+        userphno,
+        dateofbirth,
+        date:new Date().toLocaleDateString('es-MX'),
+
       })
         .then((user) =>
           res.status(200).json({
