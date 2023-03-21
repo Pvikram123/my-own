@@ -20,6 +20,7 @@ const login = async (req, res) => {
           expiresIn: "1h",
         }
       );
+      console.log("sasasaasada");
       user.token = token;
       res
       .status(200)

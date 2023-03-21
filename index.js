@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser())
 
 
+
 app.use(express.json())
 app.use('/try',router)
 app.use('/',jwt_auth)
