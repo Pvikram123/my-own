@@ -10,11 +10,14 @@ const userschema=new Mongoose.Schema({
     },
     userpassword:{
         type:String,
-        require:true
+        minlegth:8,
+        require:true,
+        
     },
     userphno:{
         type:Number,
         max:9999999999,
+        min:999999999,
         require:true,
         
         },

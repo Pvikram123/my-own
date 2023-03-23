@@ -53,7 +53,6 @@ else if (req.body.username)
           expiresIn: "1h",
         }
       );
-      console.log("sasasaasada");
       user.token = token;
       res
       .status(200)
