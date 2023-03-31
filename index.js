@@ -3,7 +3,10 @@ const Mongoose=require("mongoose")
 Mongoose.set('strictQuery', false);
 const router=require("./routes/userRoute")
 const authrouter=require("./routes/authRoutes")
-const app=express()
+const bodyParser = require('body-parser');
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
 const jwt_auth=require('./auth/authvadalation')
 const cookieParser = require("cookie-parser");
 app.use(cookieParser())

@@ -13,4 +13,7 @@ router.delete("/out",userlogout)
 router.delete('/del/',jwt_auth,delete_user)
 router.get('/',get);
 router.get('/get',getname)
+router.get('/test',(req,res)=>{
+    res.redirect('http://127.0.0.1:5500/index.html')
+})
 module.exports=router

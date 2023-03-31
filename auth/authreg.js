@@ -5,19 +5,17 @@ const bcrypt = require("bcryptjs");
 
 
 const register = async (req, res) => {
-  
+  console.log(req.body);
   const { username, userpassword, useremail,userphno,dateofbirth } = req.body;
   const doesexist = await User.findOne({useremail: useremail});
         if(doesexist){res.send("email already exist")
          return
-        console.log("ddddd")}
-      //throw createerror.Conflict(`${useremail} already exists`);
+        }
 
   const phnodoesexist = await User.findOne({userphno: userphno});
      if(phnodoesexist){res.send("phnumber already exist")
-    return
+    return  
   }
-      //throw createerror.Conflict(`${userphno} already exists`);
 
   bcrypt.hash(userpassword, 10).then(
     async (hash) =>
@@ -34,11 +32,8 @@ const register = async (req, res) => {
       
 
         .then((user) =>
-          res.status(200).json({
-            message: "User successfully created",
-            user,
+        res.sendFile("/home/vikram/Desktop/git/karthi/HTML/log.html")
             
-          })
         
         )
         
@@ -51,6 +46,6 @@ const register = async (req, res) => {
   );
 };
 
-
+console.log("good morning");
 
 module.exports= register

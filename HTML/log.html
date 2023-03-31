@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body{
+        background-image:url('https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80');
+        background-repeat: no-repeat;
+        background-size:100%;
+    }
+    #a1{
+        width: 50%;
+        padding: 5px;
+        margin-top: 15%;
+        background-color: transparent;
+    }
+    #b2{
+        text-align: center;
+        padding: 0%;
+        
+    }
+    .l1{
+        font-size: 30px;
+    }
+    .i1{
+        padding-right: 9%;
+        padding-top: 1.5%;
+    }
+
+</style>
+</head>
+<body>
+    <div id="a1">
+    <form id="b2" action="http://localhost:5000/try/log" method="POST">
+            <label class="l1" for="useremail">Email: </label><br>
+            <input class="i1" type="useremail" id="useremail" name="useremail"  />
+            <br/><br>
+            <label class="l1" for="userpassword">Password:</label><br>
+            <input class="i1" type="password" id="userpassword" name="userpassword"/>
+            <br><br>
+            <input style="width: 10%; padding-top: 1%;font-size: large;"  type="submit" value="submit" />
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -2,18 +2,20 @@ const karthi=require("../model/data")
 
 exports.get=async(req,res)=>{
     try{
-       const data=await karthi.find();
+       const data=await karthi.find({},{"__v":0,"_id":0});
+       console.log(data);
        res.status(200).json({data})
     }
     catch(err){
         res.status(500).json({"not complete":err.message});
     }
 }
-
+                                                                                                                                                                                                                         
 exports.getid=async(req,res)=>
 {
     try
-    {
+    { 
+        
        const data=await karthi.find({id:req.params.id})
         res.status(200).json(data)
     }

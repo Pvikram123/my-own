@@ -10,4 +10,5 @@ authrouter.get('/get/:id',getid);
 authrouter.put('/put/:id',find.put_user)
 authrouter.get('/get',getname)
 authrouter.get('/date',getdate)
+
 module.exports=authrouter;
