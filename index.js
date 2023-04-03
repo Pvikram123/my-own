@@ -14,9 +14,11 @@ app.use(cookieParser())
 
 
 app.use(express.json())
+
 app.use('/try',router)
 app.use('/',jwt_auth)
 app.use('/exe',authrouter)
+
 
 const uri =`mongodb+srv://vikram24:${process.env.password}@cluster0.pwfx8lq.mongodb.net/karthi`;
 Mongoose.connect(uri, {

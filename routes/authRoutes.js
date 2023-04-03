@@ -7,7 +7,7 @@ const {get,getid,getname,getdate} = require("../controllers/controlfind")
 authrouter.post('/post',post_user);
 authrouter.get('/',get);
 authrouter.get('/get/:id',getid);
-authrouter.put('/put/:id',find.put_user)
+authrouter.put('/put/',find.put_user)
 authrouter.get('/get',getname)
 authrouter.get('/date',getdate)
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body{
+        background-image:url('https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80');
+        background-repeat: no-repeat;
+        background-size:100%;
+    }
+    #a1{
+        width: 50%;
+        padding: 5px;
+        margin-top: 15%;
+        background-color: transparent;
+    }
+    #b2{
+        text-align: center;
+        padding: 0%;
+        background:rgb(204, 201, 201)
+        
+    }
+    .l1{
+        font-size: 30px;
+    }
+    .i1{
+        padding-right: 9%;
+        padding-top: 1.5%;
+        
+    }
+
+</style>
+</head>
+<body>
+    <div id="a1">
+    <form id="b2" action="http://localhost:5000/exe/post" method="POST">
+            <label class="l1" for="name" >Name: </label><br>
+            <input class="i1" type="text" id="name" name="name" autofocus />
+            <br/><br>
+            <label class="l1" for="id">id: </label><br>
+            <input class="i1" type="text" id="id" name="id"  />
+            <br/><br>
+            <label class="l1" for="product">product:</label><br>
+            <input class="i1" type="text" id="product" name="product"/>
+            <br><br>
+            <label class="l1" for="item">item:</label><br>
+            <input class="i1" type="text" id="item" name="item"/>
+            <br><br>
+            <label class="l1" for="quantity">quantity:</label><br>
+            <input class="i1" type="text" id="quantity" name="quantity"/>
+            <br><br>
+            <label class="l1" for="price">price:</label><br>
+            <input class="i1" type="text" id="price" name="price"/>
+            <br><br>
+            <input style="width: 10%; padding-top: 1%;font-size: large;"  type="submit" value="submit" />
+
+    </form>
+</div>
+
+</body>
+</html>

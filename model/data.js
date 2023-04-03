@@ -3,9 +3,11 @@ const Mongoose=require("mongoose")
 const userschema=new Mongoose.Schema({
        name:{
            type:String,
+           required:true
        },
        id:{
           type:Number,
+          required:true
        },
         product:{
             type:String,
@@ -21,6 +23,7 @@ const userschema=new Mongoose.Schema({
         },
         price:{
             type:String,
+            required:true
         },
         date:{
            
