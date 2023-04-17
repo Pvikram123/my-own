@@ -11,6 +11,6 @@ router.post("/reg",register)
 router.post("/log",login)
 router.get("/out",userlogout)
 router.delete('/del/',jwt_auth,delete_user)
-router.get('/',get);
+router.get('/getall',get);
 router.get('/get',getname)
 module.exports=router

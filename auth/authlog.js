@@ -23,10 +23,10 @@ if(req.body.useremail){
       );
   
       user.token = token;
-      res
+      res                                                                                                                                                                                                                                                                             
       .status(200)
       .cookie("access_token", token)
-      .redirect("http://localhost:5000/exe/")
+      .send(`<body style="background-repeat: no-repeat;background-size:100%; background-image: url('https://images.unsplash.com/photo-1600577916048-804c9191e36c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2VsY29tZSUyMHNpZ258ZW58MHx8MHx8&w=1000&q=80')";><h1 style="color: white; text-align: center;">SUCCESS FULLY LOG IN</h1></body>`)
       return;
     }
     else{
@@ -70,3 +70,4 @@ else if (req.body.username)
 }}
 
 module.exports = login
+

@@ -32,7 +32,7 @@ const register = async (req, res) => {
       
 
         .then((user) =>
-        res.sendFile("/home/vikram/Desktop/git/karthi/HTML/log.html")
+        res.sendFile("/home/vikram/Desktop/folder/git/karthi/HTML/log.html")
             
         
         )
@@ -45,7 +45,5 @@ const register = async (req, res) => {
         )
   );
 };
-
-console.log("good morning");
 
 module.exports= register
